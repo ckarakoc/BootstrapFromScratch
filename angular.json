@@ -23,7 +23,13 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/sandbox/",
+                "output": "/sandbox/"
+              },
+              "src/app/sandbox/assets"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
