@@ -1,21 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/> -->
     <title>Bootstrap Sandbox</title>
+    <style>
+      * {
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+        box-sizing: border-box;
+      }
+
+      html, body {
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #2E2E2E;
+      }
+
+
+      .title-card {
+        position: relative;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fded00;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+        user-select: none;
+      }
+
+      .title-card .base-text {
+        position: relative;
+        z-index: 2;
+        color: #fded00;
+      }
+
+      .title-card .glitch-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #00E572;
+        user-select: none;
+        animation: glitchtc 3s infinite;
+        transform: translate(-1px, 1px);
+        z-index: 1;
+      }
+
+      @keyframes glitchtc {
+        0% {
+          transform: translate(-1px, 1px);
+        }
+        10% {
+          transform: translate(-2px, 2px);
+        }
+        30% {
+          transform: scale(1.05);
+        }
+        50% {
+          transform: translate(2px, -2px);
+        }
+        80%, 100% {
+          transform: translate(-1px, 1px);
+        }
+      }
+
+      .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-left: 30px;
+        margin-right: 30px;
+        max-width: 800px;
+      }
+
+      .btn-wrapper {
+        position: relative;
+        height: 38px;
+        /*width: 84px;*/
+        /*margin: 20px;*/
+      }
+
+      .btn-wrapper .btn-link {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        cursor: pointer;
+        z-index: 10;
+        opacity: 0;
+      }
+
+      .custom-btn {
+        --primary: #ff184c;
+        --shadow-primary: #fded00;
+        --color: white;
+        --font-size: 9px;
+        --shadow-primary-hue: 180;
+        --shadow-secondary-hue: 60;
+        --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+        --clip: polygon(11% 0, 95% 0, 100% 25%, 90% 90%, 95% 90%, 85% 90%, 85% 100%, 7% 100%, 0 80%);
+        --border: 5px;
+        --shimmy-distance: 5;
+        --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+        --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+        --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+        --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+        --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+        --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+        --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+        --label-size: large;
+        color: var(--color);
+        text-transform: uppercase;
+        font-size: var(--font-size);
+        letter-spacing: 3px;
+        position: relative;
+        font-weight: 900;
+        width: 100%;
+        height: 100%;
+        line-height: 38px;
+        text-align: center;
+        transition: background 0.2s, 0.3s;
+        padding: 0 15px;
+      }
+
+      .btn-link.style-secondary + .custom-btn {
+        --primary: #8B00FF;
+        --shadow-primary: #00e572;
+      }
+
+      .btn-link:hover + .custom-btn {
+        --primary: #5A005E;
+        /*--font-size: 11px;*/
+        transform: scale(1.2);
+      }
+
+      .custom-btn:after, .custom-btn:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        clip-path: var(--clip);
+        z-index: -1;
+      }
+
+      .custom-btn:before {
+        background: var(--shadow-primary);
+        transform: translate(var(--border), 0);
+      }
+
+      .custom-btn:after {
+        background: var(--primary);
+      }
+
+      .btn__tag {
+        position: absolute;
+        padding: 1px 4px;
+        letter-spacing: 1px;
+        line-height: 1;
+        bottom: -5%;
+        right: 5%;
+        font-weight: normal;
+        color: hsl(0, 0%, 0%);
+        font-size: var(--font-size);
+      }
+
+      .btn__glitch {
+        position: absolute;
+        top: calc(var(--border) * -1);
+        left: calc(var(--border) * -1);
+        right: calc(var(--border) * -1);
+        bottom: calc(var(--border) * -1);
+        background: var(--shadow-primary);
+        text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+        clip-path: var(--clip);
+        animation: glitch 2s infinite;
+        display: none;
+      }
+
+      .btn-link:hover + .custom-btn .btn__glitch {
+        display: block;
+      }
+
+      .btn-link.style-secondary + .custom-btn .btn__glitch {
+        display: block;
+        animation: glitch 5s infinite;
+      }
+
+      .btn__glitch:before {
+        content: '';
+        position: absolute;
+        top: calc(var(--border) * 1);
+        right: calc(var(--border) * 1);
+        bottom: calc(var(--border) * 1);
+        left: calc(var(--border) * 1);
+        clip-path: var(--clip);
+        background: var(--primary);
+        z-index: -1;
+      }
+
+      @keyframes glitch {
+        0% {
+          clip-path: var(--clip-one);
+        }
+
+        2%, 8% {
+          clip-path: var(--clip-two);
+          transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+        }
+
+        6% {
+          clip-path: var(--clip-two);
+          transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        }
+
+        9% {
+          clip-path: var(--clip-two);
+          transform: translate(0, 0);
+        }
+
+        10% {
+          clip-path: var(--clip-three);
+          transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        }
+
+        13% {
+          clip-path: var(--clip-three);
+          transform: translate(0, 0);
+        }
+
+        14%, 21% {
+          clip-path: var(--clip-four);
+          transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        }
+
+        25% {
+          clip-path: var(--clip-five);
+          transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        }
+
+        30% {
+          clip-path: var(--clip-five);
+          transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+        }
+
+        35%, 45% {
+          clip-path: var(--clip-six);
+          transform: translate(calc(var(--shimmy-distance) * -1%));
+        }
+
+        40% {
+          clip-path: var(--clip-six);
+          transform: translate(calc(var(--shimmy-distance) * 1%));
+        }
+
+        50% {
+          clip-path: var(--clip-six);
+          transform: translate(0, 0);
+        }
+
+        55% {
+          clip-path: var(--clip-seven);
+          transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+        }
+
+        60% {
+          clip-path: var(--clip-seven);
+          transform: translate(0, 0);
+        }
+
+        31%, 61%, 100% {
+          clip-path: var(--clip-four);
+        }
+      }
+
+      .number {
+        background: var(--shadow-primary);
+        color: #323232;
+        font-size: 5.5px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        position: absolute;
+        width: 15px;
+        height: 6px;
+        top: 0;
+        left: 81%;
+        line-height: 6.2px;
+      }
+
+    </style>
   </head>
   <body>
-    <div class="container">
-      <h1 class="mb-5">Topic</h1>
-
-      <!-- Don't go past here -->
+    <div class="title-card">
+      <span class="base-text">Sandbox<span aria-hidden="true">_</span></span>
+      <span class="glitch-text" aria-hidden="true">Sandbox<span aria-hidden="true">_</span></span>
     </div>
-    <div style="margin-top: 350px"></div>
 
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <!-- <div class="title-card"> -->
+    <!--   Sandbox<span aria-hidden="true">_</span> -->
+    <!--   <span class="btn__glitch" aria-hidden="true">_Sandbox</span> -->
+    <!-- </div> -->
+
+    <div class="btn-container">
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./01-containers.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Containers
+          <span class="btn__glitch" aria-hidden="true">_Containers</span>
+          <label class="number">r1</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./02-typography.html"></a>
+        <div class="custom-btn">
+          _Typography<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Typography</span>
+          <label class="number">r2</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./03-display-position.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Display_Position
+          <span class="btn__glitch" aria-hidden="true">_Display_Position</span>
+          <label class="number">r3</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./04-background-text-colors.html"></a>
+        <div class="custom-btn">
+          Background_Text_Colors<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Background_Text_Colors</span>
+          <label class="number">r4</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./05-spacing.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Spacing
+          <span class="btn__glitch" aria-hidden="true">_Spacing</span>
+          <label class="number">r5</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./06-sizing-borders-shadows.html"></a>
+        <div class="custom-btn">
+          Sizing_Borders_Shadows<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Sizing_Borders_Shadows</span>
+          <label class="number">r6</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./07-breakpoints.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Breakpoints
+          <span class="btn__glitch" aria-hidden="true">_Breakpoints</span>
+          <label class="number">r7</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./08-buttons.html"></a>
+        <div class="custom-btn">
+          Buttons<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Buttons</span>
+          <label class="number">r8</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./09-navbar.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Navbar
+          <span class="btn__glitch" aria-hidden="true">_Navbar</span>
+          <label class="number">r9</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./10-bootstrap-grid-columns.html"></a>
+        <div class="custom-btn">
+          Bootstrap_Grid_Columns<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Bootstrap_Grid_Columns</span>
+          <label class="number">r10</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./11-flexbox.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Flexbox
+          <span class="btn__glitch" aria-hidden="true">_Flexbox</span>
+          <label class="number">r11</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./12-cards.html"></a>
+        <div class="custom-btn">
+          Cards<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Cards</span>
+          <label class="number">r12</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./13-list-groups-badges.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>List_Groups_Badges
+          <span class="btn__glitch" aria-hidden="true">_List_Groups_Badges</span>
+          <label class="number">r13</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./14-forms-input.html"></a>
+        <div class="custom-btn">
+          Forms_Input<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Forms_Input</span>
+          <label class="number">r14</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./15-form-validation-display.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Form_Validation_Display
+          <span class="btn__glitch" aria-hidden="true">_Form_Validation_Display</span>
+          <label class="number">r15</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./16-alerts-progress-bars.html"></a>
+        <div class="custom-btn">
+          Alerts_Progress_Bars<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Alerts_Progress_Bars</span>
+          <label class="number">r16</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./17-tables.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Tables
+          <span class="btn__glitch" aria-hidden="true">_Tables</span>
+          <label class="number">r17</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./18-breadcrumb-pagination.html"></a>
+        <div class="custom-btn">
+          Breadcrumb_Pagination<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Breadcrumb_Pagination</span>
+          <label class="number">r18</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./19-other-css-utilities.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Other_CSS_Utilities
+          <span class="btn__glitch" aria-hidden="true">_Other_CSS_Utilities</span>
+          <label class="number">r19</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./20-darkmode-and-variables.html"></a>
+        <div class="custom-btn">
+          Darkmode_And_Variables<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Darkmode_And_Variables</span>
+          <label class="number">r20</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./21-dropdowns.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Dropdowns
+          <span class="btn__glitch" aria-hidden="true">_Dropdowns</span>
+          <label class="number">r21</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./22-accordion-collapse.html"></a>
+        <div class="custom-btn">
+          Accordion_Collapse<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Accordion_Collapse</span>
+          <label class="number">r22</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./23-carousel.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Carousel
+          <span class="btn__glitch" aria-hidden="true">_Carousel</span>
+          <label class="number">r23</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./24-toasts.html"></a>
+        <div class="custom-btn">
+          Toasts<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Toasts</span>
+          <label class="number">r24</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./25-spinners.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Spinners
+          <span class="btn__glitch" aria-hidden="true">_Spinners</span>
+          <label class="number">r25</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./26-modals.html"></a>
+        <div class="custom-btn">
+          Modals<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Modals</span>
+          <label class="number">r26</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link" href="./27-popovers-tooltips.html"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Popovers_Tooltips
+          <span class="btn__glitch" aria-hidden="true">_Popovers_Tooltips</span>
+          <label class="number">r27</label>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" href="./28-darkmode-toggle.html"></a>
+        <div class="custom-btn">
+          Darkmode_Toggle<span aria-hidden="true">_</span>
+          <span class="btn__glitch" aria-hidden="true">_Darkmode_Toggle</span>
+          <label class="number">r28</label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <script src="./assets/js/bootstrap.bundle.min.js"></script> -->
   </body>
 </html>
 <!-- TODO: make this a nice selector, just as the home-page: for all sandbox elements... -->
