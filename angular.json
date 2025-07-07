@@ -5,7 +5,8 @@
   "schematics": {
     "@schematics/angular": {
       "component": {
-        "skipTests": true
+        "skipTests": true,
+        "style": "scss"
       }
     }
   },
@@ -42,7 +43,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ]
           },
           "configurations": {
@@ -100,7 +101,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ]
           }
         }
