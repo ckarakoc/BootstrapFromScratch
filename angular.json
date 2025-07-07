@@ -2,6 +2,13 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "skipTests": true
+      }
+    }
+  },
   "projects": {
     "BootstrapFromScratch": {
       "projectType": "application",
@@ -29,7 +36,9 @@
                 "input": "src/app/sandbox/",
                 "output": "/sandbox/"
               },
-              "src/app/sandbox/assets"
+              "src/app/sandbox/assets",
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
