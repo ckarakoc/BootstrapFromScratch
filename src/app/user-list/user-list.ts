@@ -1,5 +1,5 @@
-import { Component, OnInit, Renderer2, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { BootstrapDarkMode } from '../shared/services/bootstrap-dark-mode.service';
 
 @Component({
   selector: 'app-user-list',
@@ -7,30 +7,14 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './user-list.html',
   styleUrl: './user-list.scss'
 })
-export class UserList implements OnInit {
-  constructor(
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) {
+export class UserList {
+  private darkModeService = inject(BootstrapDarkMode)
+
+  setModeToDark() {
+    this.darkModeService.setTheme('dark');
   }
 
-  ngOnInit(): void {
-    this.loadScript();
-  }
-
-  loadScript() {
-    // if (document.getElementById('darkmode-toggle-script')) {
-    //   console.log('Script already loaded');
-    //   return;
-    // }
-
-    const script = this.renderer.createElement('script');
-    script.id = 'darkmode-toggle-script';
-    script.src = 'assets/js/darkmodetoggle.js';
-    script.type = 'text/javascript';
-    script.onload = () => console.log('Dark Mode Script loaded dynamically');
-    script.onerror = () => console.error('Error loading Dark Mode Script');
-
-    this.renderer.appendChild(this.document.body, script);
+  setModeToLight() {
+    this.darkModeService.setTheme('light');
   }
 }
