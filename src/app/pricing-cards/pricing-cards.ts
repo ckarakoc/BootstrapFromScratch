@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pricing-cards',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './pricing-cards.scss'
 })
 export class PricingCards {
-
+  constructor(private title: Title) {
+    this.title.setTitle('Pricing Cards');
+  }
 }
