@@ -1,7 +1,7 @@
-import { Component, signal, input, output, inject, OnInit } from '@angular/core';
+import { Component, inject, output, signal } from '@angular/core';
 import { BootstrapDarkMode } from '../../services/bootstrap-dark-mode.service';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faMoon, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-theme-button',
@@ -11,21 +11,14 @@ import { faMoon, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './theme-button.html',
   styleUrl: './theme-button.scss'
 })
-export class ThemeButton implements OnInit {
+export class ThemeButton {
   protected readonly faSun = faSun;
   protected readonly faMoon = faMoon;
 
   private themeService = inject(BootstrapDarkMode);
-
-  initialTheme = input<'light' | 'dark'>('light');
   themeChanged = output<'light' | 'dark'>();
+  currentTheme = signal<'light' | 'dark'>(this.themeService.getCurrentTheme());
 
-  currentTheme = signal<'light' | 'dark'>(this.initialTheme());
-
-  ngOnInit(): void {
-    this.themeService.setTheme(this.initialTheme());
-    this.currentTheme.set(this.themeService.getCurrentTheme());
-  }
 
   toggleTheme(): void {
     this.themeService.toggleTheme();

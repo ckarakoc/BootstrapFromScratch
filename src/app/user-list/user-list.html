@@ -25,3 +25,45 @@
     </div>
   </div>
 </header>
+<!-- User List -->
+<main>
+  <div class="container">
+    <div class="row">
+      @for (user of users; track $index) {
+        <div class="col-md-4">
+          @let data = user;
+          @let name = data.name.first + " " + data.name.last;
+          @let location = data.location.city + ", " + data.location.state;
+          @let email = data.email;
+          @let picture = data.picture.large;
+
+          <div class="card mb-3"
+               data-bs-container="body"
+               data-bs-toggle="popover"
+               data-bs-placement="top"
+               [attr.data-bs-content]="'Email: {{ email }}'"
+               ngbPopover="{{ email }}"
+               triggers="mouseenter:mouseleave">
+            <div class="card-body">
+              <div class="d-flex gap-3">
+                <div class="user-img">
+                  <img class="img-fluid rounded-circle profile-img" src="{{ picture }}" alt="profile">
+                </div>
+                <div class="user-info">
+                  <h4>{{ name }}</h4>
+                  <h6>{{ location }}</h6>
+                  <div class="d-flex flex-wrap gap-1">
+                    <span class="badge bg-primary">{{ user.hobbies[0] }}</span>
+                    <span class="badge bg-primary">{{ user.hobbies[1] }}</span>
+                    <span class="badge bg-primary">{{ user.hobbies[2] }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</main>
