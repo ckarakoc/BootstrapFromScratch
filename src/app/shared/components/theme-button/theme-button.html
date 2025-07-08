@@ -1,0 +1,3 @@
+<button class="btn btn-outline-secondary" (click)="toggleTheme()">
+  <fa-icon [icon]="currentTheme() === 'light' ? faMoon : faSun"></fa-icon> {{ currentTheme() === 'light' ? 'Dark' : 'Light' }} Mode
+</button>

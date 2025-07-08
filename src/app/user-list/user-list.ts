@@ -1,20 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { BootstrapDarkMode } from '../shared/services/bootstrap-dark-mode.service';
+import { Component } from '@angular/core';
+import { ThemeButton } from '../shared/components/theme-button/theme-button';
 
 @Component({
   selector: 'app-user-list',
-  imports: [],
+  imports: [
+    ThemeButton
+  ],
   templateUrl: './user-list.html',
   styleUrl: './user-list.scss'
 })
 export class UserList {
-  private darkModeService = inject(BootstrapDarkMode)
-
-  setModeToDark() {
-    this.darkModeService.setTheme('dark');
-  }
-
-  setModeToLight() {
-    this.darkModeService.setTheme('light');
-  }
 }
