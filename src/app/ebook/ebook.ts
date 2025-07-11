@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faDollarSign, faRocket, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -17,9 +17,10 @@ export class Ebook {
   protected readonly faRocket = faRocket;
   protected readonly faDollarSign = faDollarSign;
 
+  imageUrl = "assets/images/ebook/header-background.jpg"
+
   scrolled = signal<boolean>(false);
 
-  @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event): void {
     this.scrolled.set(window.scrollY > 50);
   }

@@ -1,4 +1,4 @@
-<div class="ebook-theme">
+<div class="ebook-theme" (window:scroll)="onWindowScroll($event)">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark"
        [class.bg-dark]="scrolled()"
@@ -33,7 +33,8 @@
   </nav>
 
   <!-- Header -->
-  <header class="header">
+  <header class="header"
+          [style.background-image]="'url(' + imageUrl + ')'">
     <div class="hero text-white pt-7">
       <div class="container-xl">
         <div class="row">
