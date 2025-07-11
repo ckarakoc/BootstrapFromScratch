@@ -1,0 +1,45 @@
+$primary: #c167ef;
+$secondary: #10bcee;
+$dark: #2b3041;
+$light: #f3f6f9;
+
+
+.btn-outline-light {
+  &:hover {
+    color: #333;
+    border: 1px solid var(--bs-dark);
+  }
+
+  border: 1px solid var(--bs-light);
+}
+
+.header {
+  background: url(/assets/images/ebook/header-background.jpg);
+  background-size: cover;
+}
+
+
+@media(max-width: 1000px) {
+  .hero .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero .text-container {
+    text-align: center;
+  }
+}
+
+.p-icon {
+  color: $primary;
+}
+
+.s-icon {
+  color: $secondary;
+}
+
+.navbar-sticky {
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
