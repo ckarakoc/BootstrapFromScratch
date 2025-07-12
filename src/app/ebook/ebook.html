@@ -1,9 +1,8 @@
 <div class="ebook-theme" (window:scroll)="onWindowScroll($event)">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark"
-       [class.bg-dark]="scrolled()"
-       [class.navbar-sticky]="scrolled()"
-  >
+       [class.bg-dark]="scrolled() || !isCollapsed()"
+       [class.navbar-sticky]="scrolled()">
     <div class="container">
       <a routerLink="/" class="navbar-brand">
         <img src="assets/images/ebook/logo.png" alt="logo" width="225">
@@ -11,10 +10,11 @@
       <button class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown">
+              data-bs-target="#navbarNavDropdown"
+              (click)="isCollapsed.set(!isCollapsed())">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="navbar-collapse" [ngbCollapse]="isCollapsed()" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a routerLink="/" class="nav-link fw-semibold">Home</a>
@@ -34,7 +34,7 @@
 
   <!-- Header -->
   <header class="header"
-          [style.background-image]="'url(' + imageUrl + ')'">
+          [style.background-image]="'url(' + imageUrlHeader + ')'">
     <div class="hero text-white pt-7">
       <div class="container-xl">
         <div class="row">
@@ -58,8 +58,7 @@
                   <div class="my-4">
                     <input type="email"
                            class="form-control form-control-lg rounded-5"
-                           placeholder="Enter your email address"
-                    >
+                           placeholder="Enter your email address">
                   </div>
                   <div class="d-grid">
                     <button class="btn btn-primary btn-lg text-white">
@@ -136,4 +135,342 @@
     </div>
   </section>
 
+  <!-- Details -->
+  <section id="details" class="details my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-container d-flex flex-column justify-content-center h-100">
+            <h2 class="display-6">Unlock Your Blogging Potential</h2>
+            <p>
+              Are you ready to unleash your true blogging potential? Our
+              ebook, "Blog Mastery," provides you with the tools and knowledge
+              to take your blog to the next level.
+            </p>
+            <ul class="list-group list-group-flush lh-lg">
+              <li class="list-group-item">
+                <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                <strong>Unleash Your Creativity:</strong> Our ebook empowers
+                you to unleash your creativity and express your unique voice
+                through your blog.
+              </li>
+              <li class="list-group-item">
+                <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                <strong>Maximize Your Reach:</strong> Learn how to optimize
+                your blog for search engines.
+              </li>
+              <li class="list-group-item">
+                <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                <strong>Monetization Strategies:</strong> Discover various
+                monetization strategies, such as sponsored content & affiliate
+                marketing.
+              </li>
+            </ul>
+            <a class="btn btn-primary text-white mt-4 align-self-start"
+               data-bs-toggle="modal"
+               data-bs-target="#modal1"
+               (click)="open(content1)">
+              Get Your Copy Now</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="image-container p-5">
+            <img src="assets/images/ebook/description.png" alt="" class="img-fluid"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statement -->
+  <section class="statement mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-container bg-light p-5 rounded-5">
+            <h2>Master the Art of Blogging Excellence</h2>
+            <p>
+              Transform your blog from a mere hobby to a thriving online
+              business with our ebook, "Blog Mastery: Monetize Your Passion."
+              This invaluable resource is your roadmap to turning your blog
+              into a profitable venture. Learn how to monetize your content
+              through various strategies such as sponsored posts, affiliate
+              marketing, and product creation. Gain insights into building a
+              strong brand, attracting lucrative partnerships, and maximizing
+              your earning potential. Take the leap and unlock the financial
+              rewards of your blogging journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details 2 -->
+  <section class="details my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="image-container p-5">
+            <img src="assets/images/ebook/author.png" alt="" class="img-fluid"/>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-container d-flex flex-column justify-content-center h-100">
+            <h2 class="display-6">Craft Remarkable Content</h2>
+            <p>
+              Discover techniques for effective storytelling, engaging
+              visuals, and compelling calls-to-action. Unlock the secrets of
+              creating a consistent and authentic brand voice that sets you
+              apart from the competition.
+            </p>
+            <ul class="list-group list-group-flush lh-lg">
+              <li class="list-group-item">
+                <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                <strong>Embrace Your Unique Voice:</strong> Learn how to
+                harness the power of your unique voice.
+              </li>
+              <li class="list-group-item">
+                <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                <strong>Spark Creativity:</strong> Explore techniques to spark
+                creativity and overcome writer's block.
+              </li>
+              <li class="list-group-item">
+                <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                <strong>Engage Your Readers:</strong> Discover strategies for
+                creating content that engages your readers on a deeper level.
+              </li>
+            </ul>
+            <a
+              class="btn btn-primary text-white mt-4 align-self-start"
+              data-bs-toggle="modal"
+              data-bs-target="#modal2"
+              (click)="open(content2)">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials mb-8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg"
+               alt=""
+               class="rounded-circle mb-3"/>
+          <p class="lead fst-italic">
+            "This ebook completely transformed my blogging journey. The
+            practical strategies and valuable insights helped me take my blog
+            to new heights. I highly recommend it!"
+          </p>
+          <p class="fw-bold">Kenny Smith - Portland, ME</p>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img src="https://randomuser.me/api/portraits/women/32.jpg"
+               alt=""
+               class="rounded-circle mb-3"/>
+          <p class="lead fst-italic">
+            "I'm so grateful for this ebook! It provided me with the guidance
+            and inspiration I needed to create engaging content and build a
+            loyal readership. It's a game-changer!"
+          </p>
+          <p class="fw-bold">Laurie Mitchell - Miami, FL</p>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <img src="https://randomuser.me/api/portraits/men/31.jpg"
+               alt=""
+               class="rounded-circle mb-3"/>
+          <p class="lead fst-italic">
+            "I can't recommend this ebook enough. It's a treasure of blogging
+            wisdom. It helped me unlock my creativity, connect with my
+            audience, and achieve remarkable results."
+          </p>
+          <p class="fw-bold">Henry White - Boston, MA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section class="download"
+           [style.background-image]="'url(' + imageUrlDownload + ')'">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="image-container mt-n6 mb-5">
+            <img src="assets/images/ebook/download-ebook.png" alt="" class="img-fluid"/>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="text-container text-white d-flex flex-column justify-content-center h-100">
+            <h2 class="fw-bold">Get Your Free Ebook Now</h2>
+            <p>
+              Unlock the power of knowledge and take your blogging journey to
+              the next level. Our ebook, "Blog Mastery: The Ultimate Guide to
+              Blogging Success," is your key to success.
+            </p>
+
+            <!-- Form -->
+            <form>
+              <div class="input-group mb-3">
+                <input type="email"
+                       class="form-control"
+                       placeholder="Email Address"/>
+                <button class="btn btn-primary text-white rounded-end">
+                  Download
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social -->
+  <section class="social text-bg-dark py-6 overflow-hidden">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 text-center fs-4">
+          <p>
+            Stay connected and join our vibrant community. For any inquiries
+            or assistance, feel free to reach out to us
+          </p>
+          <div class="social-icons d-flex justify-content-center gap-4">
+            <fa-icon [icon]="faFacebook" class="me-3" size="2x"></fa-icon>
+            <fa-icon [icon]="faTwitter" class="me-3" size="2x"></fa-icon>
+            <fa-icon [icon]="faInstagram" class="me-3" size="2x"></fa-icon>
+            <fa-icon [icon]="faLinkedin" class="me-3" size="2x"></fa-icon>
+            <fa-icon [icon]="faPinterest" class="me-3" size="2x"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-top border-primary bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="nav">
+            <li class="nav-item">
+              <a routerLink="/" class="nav-link link-light">Home</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="[]" fragment="details" class="nav-link link-light">Details</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/ebook/contact" class="nav-link link-light">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <p class="text-end d-none d-md-block">
+            Copyright &copy; Blog Mastery 2023
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <ng-template #content1 let-modal>
+    <div class="container-fluid p-0">
+      <div class="row">
+        <!-- Left image column -->
+        <div class="image-container col-lg-6">
+          <img src="assets/images/ebook/description.png" alt="" class="img-fluid col-lg-6 h-100 w-100">
+        </div>
+
+        <!-- Right content column -->
+        <div class="col-lg-6 p-4">
+          <div class="modal-header border-0">
+            <h4 class="modal-title">Unlock Your Blogging Potential</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you ready to unleash your true blogging potential? Our
+              ebook, "Blog Mastery," provides the tools and knowledge to take
+              your blog to the next level.
+            </p>
+            <ul class="list-group list-group-flush lh-lg">
+              <li class="list-group-item border-0 ps-0">
+                <fa-icon [icon]="faSquare" class="me-2 p-icon"></fa-icon>
+                <strong>Unleash Creativity:</strong> Express your unique voice.
+              </li>
+              <li class="list-group-item border-0 ps-0">
+                <fa-icon [icon]="faSquare" class="me-2 p-icon"></fa-icon>
+                <strong>Maximize Reach:</strong> SEO & growth strategies.
+              </li>
+              <li class="list-group-item border-0 ps-0">
+                <fa-icon [icon]="faSquare" class="me-2 p-icon"></fa-icon>
+                <strong>Monetization:</strong> Use affiliate & sponsored content.
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer border-0">
+            <button class="btn btn-primary">Free Download</button>
+            <button class="btn btn-secondary" (click)="modal.close()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #content2 let-modal>
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="image-container col-lg-6">
+          <img src="assets/images/ebook/author.png" alt="" class="img-fluid w-100 h-100"/>
+        </div>
+
+        <div class="col-lg-6 p-4">
+          <div class="text-container">
+            <div class="modal-header border-0">
+              <h4 class="modal-title">Craft Remarkable Content</h4>
+              <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Discover techniques for effective storytelling, engaging
+                visuals, and compelling calls-to-action. Unlock the secrets of
+                creating a consistent and authentic brand voice that sets you
+                apart from the competition.
+              </p>
+              <ul class="list-group list-group-flush lh-lg mb-3">
+                <li class="list-group-item">
+                  <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                  <strong>Embrace Your Unique Voice:</strong> Learn how to
+                  harness the power of your unique voice.
+                </li>
+                <li class="list-group-item">
+                  <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                  <strong>Spark Creativity:</strong> Explore techniques to
+                  spark creativity and overcome writer's block.
+                </li>
+                <li class="list-group-item">
+                  <fa-icon [icon]="faSquare" class="p-icon me-1"></fa-icon>
+                  <strong>Engage Your Readers:</strong> Discover strategies
+                  for creating content that engages your readers on a deeper
+                  level.
+                </li>
+              </ul>
+            </div>
+
+            <div class="modal-footer border-0">
+              <a href="" class="btn btn-primary text-white">Free Download</a>
+              <button class="btn btn-light" data-bs-dismiss="modal" (click)="modal.close()">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </div>

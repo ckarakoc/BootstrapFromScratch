@@ -37,8 +37,17 @@ $light: #f3f6f9;
   color: $secondary;
 }
 
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+}
+
 .navbar-sticky {
   opacity: 0.9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease-in-out;
+}
+
+.modal-dialog {
+  max-width: 1040px;
 }

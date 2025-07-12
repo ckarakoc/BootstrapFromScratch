@@ -5,6 +5,7 @@ import { PricingCards } from './pricing-cards/pricing-cards';
 import { Ratings } from './ratings/ratings';
 import { UserList } from './user-list/user-list';
 import { Ebook } from './ebook/ebook';
+import { EbookContact } from './ebook-contact/ebook-contact';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'ratings', component: Ratings },
   { path: 'user-list', component: UserList },
   { path: 'ebook', component: Ebook },
+  { path: 'ebook/contact', component: EbookContact },
   { path: '**', component: PageNotFound },
 ];
