@@ -18,7 +18,7 @@ export class EbookContact {
   scrolled = signal<boolean>(false);
   isCollapsed = signal<boolean>(true);
 
-  imageUrlHeader: string = "/assets/images/ebook/header-background.jpg";
+  imageUrlHeader: string = "assets/images/ebook/header-background.jpg";
 
   onWindowScroll(event: Event): void {
     this.scrolled.set(window.scrollY > 50);
