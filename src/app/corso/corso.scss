@@ -1,0 +1,68 @@
+$primary: #f8b547;
+$secondary: #35353a;
+$light: #fbf9f5;
+$body-bg: $light;
+
+.p-icon {
+  color: $primary;
+}
+
+.p-bg {
+  background-color: $primary;
+}
+
+.l-bg {
+  background-color: $light;
+}
+
+.header {
+  min-height: 1000px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+invitation-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media(max-width: 992px) {
+  .navbar {
+    background: var(--bs-dark);
+  }
+
+  .header {
+    height: 800px !important;
+    min-height: 800px !important;
+
+    .text-container p {
+      width: 100% !important;
+      font-size: 16px;
+    }
+  }
+
+  .register {
+    padding: 40px 0 !important;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  .summary {
+    margin-top: 0 !important;
+    width: 90% !important;
+  }
+}
+
+.navbar-sticky {
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.list-unstyled {
+  list-style: none;
+}

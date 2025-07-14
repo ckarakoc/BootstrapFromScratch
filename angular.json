@@ -21,6 +21,16 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": [
+                  "mixed-decls",
+                  "color-functions",
+                  "global-builtin",
+                  "import"
+                ]
+              }
+            },
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js",

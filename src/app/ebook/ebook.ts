@@ -16,16 +16,6 @@ import { faFacebook, faInstagram, faLinkedin, faPinterest, faTwitter } from '@fo
   styleUrl: './ebook.scss'
 })
 export class Ebook {
-  protected readonly faUser = faUser;
-  protected readonly faRocket = faRocket;
-  protected readonly faDollarSign = faDollarSign;
-  protected readonly faSquare = faSquare;
-  protected readonly faFacebook = faFacebook;
-  protected readonly faLinkedin = faLinkedin;
-  protected readonly faInstagram = faInstagram;
-  protected readonly faTwitter = faTwitter;
-  protected readonly faPinterest = faPinterest;
-
   imageUrlHeader: string = "assets/images/ebook/header-background.jpg"
   imageUrlDownload: string = "assets/images/ebook/download-background.jpg";
 
@@ -40,7 +30,7 @@ export class Ebook {
   }
 
   open(content: TemplateRef<any>) {
-    this.modalService.open(content, { centered: true, ariaLabelledBy: 'modal-basic-title', size:'xl' }).result.then(
+    this.modalService.open(content, { centered: true, ariaLabelledBy: 'modal-basic-title', size: 'xl' }).result.then(
       (result) => {
         this.closeResult.set(`Closed with: ${ result }`);
       },
@@ -60,4 +50,14 @@ export class Ebook {
         return `with: ${ reason }`;
     }
   }
+
+  protected readonly faUser = faUser;
+  protected readonly faRocket = faRocket;
+  protected readonly faDollarSign = faDollarSign;
+  protected readonly faSquare = faSquare;
+  protected readonly faFacebook = faFacebook;
+  protected readonly faLinkedin = faLinkedin;
+  protected readonly faInstagram = faInstagram;
+  protected readonly faTwitter = faTwitter;
+  protected readonly faPinterest = faPinterest;
 }
