@@ -7,6 +7,7 @@ import { UserList } from './user-list/user-list';
 import { Ebook } from './ebook/ebook';
 import { EbookContact } from './ebook-contact/ebook-contact';
 import { Corso } from './corso/corso';
+import { Portfolio } from './portfolio/portfolio';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,5 +18,6 @@ export const routes: Routes = [
   { path: 'ebook', component: Ebook },
   { path: 'ebook/contact', component: EbookContact },
   { path: 'corso', component: Corso },
+  { path: 'portfolio', component: Portfolio },
   { path: '**', component: PageNotFound },
 ];
