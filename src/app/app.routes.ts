@@ -8,6 +8,8 @@ import { Ebook } from './ebook/ebook';
 import { EbookContact } from './ebook-contact/ebook-contact';
 import { Corso } from './corso/corso';
 import { Portfolio } from './portfolio/portfolio';
+import { Office } from './office/office';
+import { Vera } from './vera/vera';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,5 +21,7 @@ export const routes: Routes = [
   { path: 'ebook/contact', component: EbookContact },
   { path: 'corso', component: Corso },
   { path: 'portfolio', component: Portfolio },
+  { path: 'office', component: Office },
+  { path: 'vera', component: Vera },
   { path: '**', component: PageNotFound },
 ];

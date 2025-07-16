@@ -57,6 +57,10 @@
               "src/assets/styles/bootstrap.scss",
               "src/assets/styles/ebook-bootstrap.scss",
               "src/assets/styles/corso-bootstrap.scss"
+            ],
+            "scripts": [
+              "src/assets/js/lightbox-plus-jquery.min.js",
+              "src/assets/js/replaceme.min.js"
             ]
           },
           "configurations": {
