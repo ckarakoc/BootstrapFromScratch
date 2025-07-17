@@ -1,3 +1,490 @@
 <div class="portfolio-theme">
-  <p>portfolio works!</p>
+  <header class="header vh-100 text-center position-relative"
+          [style.background-image]="'url(' + imageUrlHeader + ')'">
+    <div class="text-container position-relative d-flex flex-column justify-content-center align-items-center h-100 z-1">
+      <h5 class="pc fs-3 fw-bold text-uppercase">
+        Hello, world.
+      </h5>
+      <h1 #typingTextEffectId class="display-1 fw-bold text-white">I Am Celal Karakoç.</h1>
+
+      <p #typingTextEffectId #jobDescription class="roles text-uppercase fs-4">
+        <span>Full Stack Web Developer | </span>
+        <span>Software Engineer</span>
+      </p>
+
+      <a [routerLink]="[]" fragment="about" class="btn btn-outline-light btn-lg mt-3">
+        <div class="d-flex">
+          <div class="me-3">
+            <fa-icon [icon]="faChevronDown"></fa-icon>
+          </div>
+          <div class="text-start">
+            <span>More About Me</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="social d-flex gap-3 position-absolute">
+        <a [routerLink]="[]">
+          <fa-icon [icon]="faTwitter" [size]="'3x'" class="text-white"></fa-icon>
+        </a>
+        <a [routerLink]="[]">
+          <fa-icon [icon]="faInstagram" [size]="'3x'" class="text-white"></fa-icon>
+        </a>
+        <a [routerLink]="[]">
+          <fa-icon [icon]="faLinkedin" [size]="'3x'" class="text-white"></fa-icon>
+        </a>
+        <a [routerLink]="[]">
+          <fa-icon [icon]="faFacebook" [size]="'3x'" class="text-white"></fa-icon>
+        </a>
+        <a [routerLink]="[]">
+          <fa-icon [icon]="faYoutube" [size]="'3x'" class="text-white"></fa-icon>
+        </a>
+        <a [routerLink]="[]">
+          <fa-icon [icon]="faGithub" [size]="'3x'" class="text-white"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="about bg-light py-5">
+    <div class="container">
+      <div class="text-center">
+        <h4 class="text-uppercase fw-bold pc">About Me</h4>
+        <hr class="w-25 mx-auto"/>
+        <h2 class="mb-4">Let me introduce myself.</h2>
+      </div>
+      <div class="about-content d-flex gap-5 align-items-center h-100">
+        <img src="assets/images/portfolio/ck.jpg" alt="ck" class="about-img img-fluid rounded-circle">
+        <p class="lead">
+          I'm a recent graduate 🎓 in Computer Science at 🏛️TU Delft
+          During my studies, I worked on a variety of projects that deepened my passion for building things with code. I love turning ideas into real, working products that people can interact with and enjoy. I'm always open to connect — let’s get in touch 🤝!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="profile my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-uppercase fw-bold">
+            Profile
+          </h3>
+          <p>
+            Here is some more info about myself to help you get to know me
+            better.
+          </p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item mb-3">
+              <h5 class="text-transform">
+                <fa-icon [icon]="faUser" class="pc"></fa-icon>
+                Full Name:
+              </h5>
+              <p>Celal Karakoç</p>
+            </li>
+            <li class="list-group-item mb-3">
+              <h5 class="text-transform">
+                <fa-icon [icon]="faCalendar" class="pc"></fa-icon>
+                Birth Date:
+              </h5>
+              <p>May 19, 1995</p>
+            </li>
+            <li class="list-group-item mb-3">
+              <h5 class="text-transform">
+                <fa-icon [icon]="faBuilding" class="pc"></fa-icon>
+                Current Position:
+              </h5>
+              <p>Owner of JellyPeak</p>
+            </li>
+            <li class="list-group-item mb-3">
+              <h5 class="text-transform">
+                <fa-icon [icon]="faHome" class="pc"></fa-icon>
+                Website:
+              </h5>
+              <p>ckarakoc.nl</p>
+            </li>
+            <li class="list-group-item mb-3">
+              <h5 class="text-transform">
+                <fa-icon [icon]="faEnvelope" class="pc"></fa-icon>
+                Email:
+              </h5>
+              <p>test&#64;mail.com</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h3 class="text-uppercase fw-bold">
+            Skills
+          </h3>
+          <p>
+            Here is a list of my skills with these dumb percentages that don't
+            mean anything 😉
+          </p>
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            HTML 5
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="100"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 100%">100%</div>
+          </div>
+
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            CSS
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="90"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 90%">90%</div>
+          </div>
+
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            JavaScript
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="90"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 90%">90%</div>
+          </div>
+
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            Bootstrap
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="100"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 100%">100%</div>
+          </div>
+
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            PHP
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="75"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 75%">75%</div>
+          </div>
+
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            Python
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="70"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 70%">70%</div>
+          </div>
+
+          <h5>
+            <fa-icon [icon]="faCheck"></fa-icon>
+            UI/UX
+          </h5>
+          <div class="progress mb-4"
+               role="progressbar"
+               aria-valuenow="70"
+               aria-valuemin="0"
+               aria-valuemax="100">
+            <div class="progress-bar pcb" style="width: 70%">70%</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 text-center">
+        <div class="col-12">
+          <a [routerLink]="[]"
+             class="btn btn-outline-dark btn-lg text-uppercase px-5 mx-3 my-2">
+            Hire Me Now
+          </a>
+          <a [routerLink]="[]"
+             class="btn btn-dark btn-lg text-uppercase px-5 mx-3 my-2">
+            Download CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h4 class="text-uppercase fw-bold pc">
+          Portfolio
+        </h4>
+        <hr class="w-25 mx-auto"/>
+        <h2 class="mb-4">
+          Check Out My Work
+        </h2>
+        <p class="lead">
+          Here is a small sample of my projects.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="project shadow-lg rounded-5">
+            <a href="assets/images/portfolio/project1.jpg"
+               data-lightbox="images"
+               data-title="Cliboard Landing Page">
+              <img src="assets/images/portfolio/project1.jpg"
+                   alt=""
+                   class="img-fluid rounded-3"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="project shadow-lg rounded-5">
+            <a href="assets/images/portfolio/project2.jpg"
+               data-lightbox="images"
+               data-title="Loop Studios Website">
+              <img src="assets/images/portfolio/project2.jpg"
+                   alt=""
+                   class="img-fluid rounded-3"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="project shadow-lg rounded-5">
+            <a href="assets/images/portfolio/project3.jpg"
+               data-lightbox="images"
+               data-title="Shortly Website">
+              <img src="assets/images/portfolio/project3.jpg"
+                   alt=""
+                   class="img-fluid rounded-3"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="project shadow-lg rounded-5">
+            <a href="assets/images/portfolio/project4.jpg"
+               data-lightbox="images"
+               data-title="Flyo Website">
+              <img src="assets/images/portfolio/project4.jpg"
+                   alt=""
+                   class="img-fluid rounded-3"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="project shadow-lg rounded-5">
+            <a href="assets/images/portfolio/project5.jpg"
+               data-lightbox="images"
+               data-title="Bookmark Website">
+              <img src="assets/images/portfolio/project5.jpg"
+                   alt=""
+                   class="img-fluid rounded-3"/>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="project shadow-lg rounded-5">
+            <a href="assets/images/portfolio/project6.jpg"
+               data-lightbox="images"
+               data-title="Grid Layout">
+              <img src="assets/images/portfolio/project6.jpg"
+                   alt=""
+                   class="img-fluid rounded-3"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="styleshout text-bg-dark bg-gradient p-6 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>Shoutout to StyleShout</h1>
+          <hr class="w-25 mx-auto"/>
+          <p class="lead mb-5">
+            Styleshout is a place for Free HTML5 Templates and Free Wordpress.
+            This design was inspired by one of their templates. Check them out
+            for templates to use and get inspiration from.
+          </p>
+          <a href="https://styleshout.com"
+             target="_blank"
+             class="btn btn-primary btn-lg text-uppercase px-5 my-2 d-flex justify-content-center">
+            Visit StyleShout
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services text-bg-dark py-5 position-relative"
+           [style.background-image]="'url(' + imageUrlServices + ')'">
+    <div class="container position-relative z-2">
+      <div class="text-center mb-5">
+        <h4 class="text-uppercase fw-bold pc">Services</h4>
+        <hr class="w-25 mx-auto"/>
+        <h2 class="mb-4">What Can I Do For You?</h2>
+        <p class="lead">
+          Here are some of the services that I offer when it comes to web
+          development and business.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <fa-icon [icon]="faGlobe" [size]="'3x'" class="pc mb-3"></fa-icon>
+          <h3 class="fs-3 mt-3">Web Design</h3>
+          <hr class="w-25 mx-auto"/>
+          <p class="fs-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <fa-icon [icon]="faCode" [size]="'3x'" class="pc mb-3"></fa-icon>
+          <h3 class="fs-3 mt-3">Web Development</h3>
+          <hr class="w-25 mx-auto"/>
+          <p class="fs-5">
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+          </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <fa-icon [icon]="faShoppingCart" [size]="'3x'" class="pc mb-3"></fa-icon>
+          <h3 class="fs-3 mt-3">Advertising & SEO</h3>
+          <hr class="w-25 mx-auto"/>
+          <p class="fs-5">
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats py-5 bgs">
+    <div class="container">
+      <div class="row g-0">
+        <div class="col-md-4 col-lg-2">
+          <div class="stat text-center border-end border-dark">
+            <fa-icon [icon]="faUsers" [size]="'3x'" class="mb-3"></fa-icon>
+            <p class="fs-1 mt-3">500+</p>
+            <h3 class="fs-6 text-uppercase">Clients</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <div class="stat text-center border-end border-dark">
+            <fa-icon [icon]="faProjectDiagram" [size]="'3x'" class="mb-3"></fa-icon>
+            <p class="fs-1 mt-3">700+</p>
+            <h3 class="fs-6 text-uppercase">Projects</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <div class="stat text-center border-end border-dark">
+            <fa-icon [icon]="faClock" [size]="'3x'" class="mb-3"></fa-icon>
+            <p class="fs-1 mt-3">16+</p>
+            <h3 class="fs-6 text-uppercase">Years</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <div class="stat text-center border-end border-dark">
+            <fa-icon [icon]="faBook" [size]="'3x'" class="mb-3"></fa-icon>
+            <p class="fs-1 mt-3">25</p>
+            <h3 class="fs-6 text-uppercase">Publications</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <div class="stat text-center border-end border-dark">
+            <fa-icon [icon]="faYoutube" [size]="'3x'" class="mb-3"></fa-icon>
+            <p class="fs-1 mt-3">2.06M</p>
+            <h3 class="fs-6 text-uppercase">Subscribers</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-2">
+          <div class="stat text-center border-end border-dark">
+            <fa-icon [icon]="faGraduationCap" [size]="'3x'" class="mb-3"></fa-icon>
+            <p class="fs-1 mt-3">1M+</p>
+            <h3 class="fs-6 text-uppercase">Students</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact text-bg-dark bg-gradient py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="text-center mb-5">
+            <h4 class="text-uppercase fw-bold pc">Contact</h4>
+            <hr class="w-25 mx-auto"/>
+            <h2 class="mb-4">I'd love to hear from you.</h2>
+            <p class="lead">
+              If you have any questions or would like to work together, please
+              contact me with the form below.
+            </p>
+          </div>
+
+          <form name="contact">
+            <div class="mb-5">
+              <input type="text"
+                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
+                     name="name"
+                     placeholder="Name"/>
+            </div>
+            <div class="mb-5">
+              <input type="email"
+                     class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
+                     name="email"
+                     placeholder="Email"/>
+            </div>
+            <div class="mb-5">
+                <textarea class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
+                          name="message"
+                          placeholder="Message"></textarea>
+            </div>
+            <div class="mb-5 d-grid">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex mt-5">
+        <p class="flex-grow-1">
+          Copyright &copy; 2023 | Design By StyleShout
+        </p>
+        <div class="hstack gap-3">
+          <a [routerLink]="[]">
+            <fa-icon [icon]="faFacebook" size="2x" class="text-white"></fa-icon>
+          </a>
+          <a [routerLink]="[]" class="text-decoration-none">
+            <fa-icon [icon]="faTwitter" size="2x" class="text-white"></fa-icon>
+          </a>
+          <a [routerLink]="[]" class="text-decoration-none">
+            <fa-icon [icon]="faInstagram" size="2x" class="text-white"></fa-icon>
+          </a>
+          <a [routerLink]="[]" class="text-decoration-none">
+            <fa-icon [icon]="faLinkedin" size="2x" class="text-white"></fa-icon>
+          </a>
+          <a [routerLink]="[]" class="text-decoration-none">
+            <fa-icon [icon]="faDribbble" size="2x" class="text-white"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

@@ -53,10 +53,14 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/styles/lightbox.min.css",
               "src/styles.scss",
               "src/assets/styles/bootstrap.scss",
               "src/assets/styles/ebook-bootstrap.scss",
-              "src/assets/styles/corso-bootstrap.scss"
+              "src/assets/styles/corso-bootstrap.scss",
+              "src/assets/styles/office-bootstrap.scss",
+              "src/assets/styles/portfolio-bootstrap.scss",
+              "src/assets/styles/vera-bootstrap.scss"
             ],
             "scripts": [
               "src/assets/js/lightbox-plus-jquery.min.js",
