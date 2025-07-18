@@ -1,9 +1,10 @@
-import { Component, inject, signal, TemplateRef, WritableSignal } from '@angular/core';
+import { Component, inject, OnInit, signal, TemplateRef, WritableSignal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faDollarSign, faRocket, faSquare, faUser } from '@fortawesome/free-solid-svg-icons';
 import { ModalDismissReasons, NgbCollapse, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { faFacebook, faInstagram, faLinkedin, faPinterest, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { ThemeLoaderService } from '../shared/services/theme-loader-service';
 
 @Component({
   selector: 'app-ebook',
@@ -15,11 +16,12 @@ import { faFacebook, faInstagram, faLinkedin, faPinterest, faTwitter } from '@fo
   templateUrl: './ebook.html',
   styleUrl: './ebook.scss'
 })
-export class Ebook {
+export class Ebook implements OnInit {
   imageUrlHeader: string = "assets/images/ebook/header-background.jpg"
   imageUrlDownload: string = "assets/images/ebook/download-background.jpg";
 
   private modalService = inject(NgbModal);
+  private themeLoader = inject(ThemeLoaderService);
 
   scrolled = signal<boolean>(false);
   closeResult: WritableSignal<string> = signal('');
@@ -27,6 +29,10 @@ export class Ebook {
 
   onWindowScroll(event: Event): void {
     this.scrolled.set(window.scrollY > 50);
+  }
+
+  ngOnInit(): void {
+    this.themeLoader.loadTheme('ebook-bootstrap');
   }
 
   open(content: TemplateRef<any>) {

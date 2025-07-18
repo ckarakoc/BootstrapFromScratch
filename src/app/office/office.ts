@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ThemeLoaderService } from '../shared/services/theme-loader-service';
 
 @Component({
   selector: 'app-office',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './office.html',
   styleUrl: './office.scss'
 })
-export class Office {
+export class Office implements OnInit {
+  private themeLoader = inject(ThemeLoaderService);
 
+  ngOnInit(): void {
+    this.themeLoader.loadTheme('office-bootstrap');
+  }
 }

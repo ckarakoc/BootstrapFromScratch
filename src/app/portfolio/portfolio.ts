@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
   faBook,
@@ -18,6 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faDribbble, faFacebook, faGithub, faInstagram, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { ThemeLoaderService } from '../shared/services/theme-loader-service';
 
 @Component({
   selector: 'app-portfolio',
@@ -28,12 +29,17 @@ import { faDribbble, faFacebook, faGithub, faInstagram, faLinkedin, faTwitter, f
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss'
 })
-export class Portfolio implements AfterViewInit {
+export class Portfolio implements AfterViewInit, OnInit {
   imageUrlHeader: string = "assets/images/portfolio/intro-bg.jpg";
   imageUrlServices: string = "assets/images/portfolio/bg.jpg";
 
   @ViewChildren('typingTextEffectId') typingElements!: QueryList<ElementRef>;
   @ViewChild('jobDescription') jobDescription!: ElementRef;
+  private themeLoader = inject(ThemeLoaderService);
+
+  ngOnInit(): void {
+    this.themeLoader.loadTheme('portfolio-bootstrap');
+  }
 
   ngAfterViewInit(): void {
     this.runTypingEffect().then(r => {
