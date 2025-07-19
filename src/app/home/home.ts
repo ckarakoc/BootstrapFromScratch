@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 export class Home {
 
   @ViewChild('frame', { static: false }) iframe!: ElementRef<HTMLIFrameElement>;
-  currentFrameTitle = 'Corso';
+  currentFrameTitle = 'Home';
 
   changeIFrame(s: string) {
     this.iframe.nativeElement.src = `#${s}`;
