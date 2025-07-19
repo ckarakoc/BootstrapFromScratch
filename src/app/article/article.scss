@@ -1,0 +1,82 @@
+$primary: #4555d2;
+$secondary: #cc2973;
+$dark: #191e47;
+$light: #f9fafe;
+$body-color: #494c52;
+$headings-color: $dark;
+
+.btn-outline-secondary {
+  &:hover {
+    color: white !important;
+  }
+
+  color: $secondary !important;
+  border: $secondary solid 1px !important;
+}
+
+.xl-text {
+  font-size: 75px;
+}
+
+.to-top-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #44434a;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+
+  &:hover {
+    background-color: #1d1d21;
+  }
+
+  img {
+    margin-bottom: 0.25rem;
+    width: 18px;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+@media(max-width: 992px) {
+  .xl-text {
+    font-size: 50px;
+  }
+
+  .navbar {
+    .btn-outline-secondary {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .xl-text {
+    font-size: 30px;
+  }
+}
+
+.navbar-sticky {
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.text-primary-s {
+  color: $primary !important;
+}
+
+.text-secondary-s {
+  color: $secondary !important;
+}
+
+

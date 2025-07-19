@@ -59,7 +59,7 @@
         <div class="col-lg-6">
           <div class="mt-6">
             <h1 class="xl-text">
-              The <span class="text-primary">Perfect</span> Office Space
+              The <span class="text-primary-s">Perfect</span> Office Space
             </h1>
             <p class="lead mb-4">
               We specialize in transforming office spaces into inspiring and
@@ -85,24 +85,469 @@
   <section #stats id="stats" class="stats container">
     <div class="row my-6">
       <div class="col-md-3 col-sm-6 text-center">
-        <h2 #counter class="counter xl-text" data-target="328"></h2>
+        <h2 #counter class="counter xl-text" data-target="328">0</h2>
         <p>Happy Customers</p>
       </div>
 
       <div class="col-md-3 col-sm-6 text-center">
-        <h2 #counter class="counter xl-text" data-target="285"></h2>
+        <h2 #counter class="counter xl-text" data-target="285">0</h2>
         <p>Issues Solved</p>
       </div>
 
       <div class="col-md-3 col-sm-6 text-center">
-        <h2 #counter class="counter xl-text" data-target="159"></h2>
+        <h2 #counter class="counter xl-text" data-target="159">0</h2>
         <p>Good Reviews</p>
       </div>
 
       <div class="col-md-3 col-sm-6 text-center">
-        <h2 #counter class="counter xl-text" data-target="128"></h2>
+        <h2 #counter class="counter xl-text" data-target="128">0</h2>
         <p>Case Studies</p>
       </div>
     </div>
   </section>
+
+  <section id="introduction" class="intro bg-light py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <h2>
+            Creating <span class="text-secondary-s">Inspiring</span> Office
+            Spaces
+          </h2>
+          <p class="fs-5">
+            At our company, designing office spaces is our passion. We take
+            pride in our completed projects that reflect our dedication and
+            expertise in creating functional and aesthetically pleasing work
+            environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="details"
+           class="details position-relative my-6 overflow-hidden">
+    <img src="assets/images/office/decoration-star.svg"
+         alt=""
+         class="decoration-star position-absolute"/>
+    <div class="container position-relative z-3">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="image-container d-flex justify-content-center">
+            <img src="assets/images/office/details-1.png" alt="" class="img-fluid"/>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mt-4">
+            <h2 class="mb-4">
+              Create <span class="text-primary-s">Unique</span> Office Spaces
+            </h2>
+            <ul class="list-unstyled">
+              <li class="d-flex mb-3">
+                <fa-icon [icon]="faCheck" [size]="'2x'" class="text-primary-s mx-4"></fa-icon>
+                <p>
+                  Our approach ensures that every office space is tailored to
+                  the unique needs and preferences of our clients. No two
+                  spaces look the same.
+                </p>
+              </li>
+              <li class="d-flex mb-3">
+                <fa-icon [icon]="faCheck" [size]="'2x'" class="text-primary-s mx-4"></fa-icon>
+                <p>
+                  We pay attention to every detail, ensuring that the design
+                  elements, furniture, and decor create a harmonious and
+                  inspiring atmosphere.
+                </p>
+              </li>
+              <li class="d-flex mb-3">
+                <fa-icon [icon]="faCheck" [size]="'2x'" class="text-primary-s mx-4"></fa-icon>
+                <p>
+                  Our team of experts guarantees that your office space will
+                  be a reflection of your brand identity and company culture.
+                </p>
+              </li>
+              <li class="d-flex mb-3">
+                <fa-icon [icon]="faCheck" [size]="'2x'" class="text-primary-s mx-4"></fa-icon>
+                <p>
+                  Existence as discourse is. Pleasure friendly at marriage
+                  blessing or should
+                </p>
+              </li>
+            </ul>
+            <a routerLink="article" class="btn btn-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services bg-light py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="text-container text-center text-lg-start">
+            <h2>
+              <span class="text-secondary-s">Services</span> that we offer
+            </h2>
+            <p>
+              At our company, we provide a wide range of services to meet all
+              your office design needs. With our expertise and attention to
+              detail, we ensure that every aspect of your office space is
+              carefully considered and executed.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="row mb-4">
+            <div class="col-md-4 d-flex flex-column align-items-center text-center">
+              <fa-icon [icon]="faRocket" [size]="'4x'" class="text-secondary-s mb-2"></fa-icon>
+              <p class="fs-5 fw-bold">Space Analysis & Planning</p>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center text-center">
+              <fa-icon [icon]="faClock" [size]="'4x'" class="text-secondary-s mb-2"></fa-icon>
+              <p class="fs-5 fw-bold">Design & Color Choosing</p>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center text-center">
+              <fa-icon [icon]="faComments" [size]="'4x'" class="text-secondary-s mb-2"></fa-icon>
+              <p class="fs-5 fw-bold">Materials & Delivery</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 d-flex flex-column align-items-center text-center">
+              <fa-icon [icon]="faTools" [size]="'4x'" class="text-secondary-s mb-2"></fa-icon>
+              <p class="fs-5 fw-bold">Execute The Concept</p>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center text-center">
+              <fa-icon [icon]="faChartPie" [size]="'4x'" class="text-secondary-s mb-2"></fa-icon>
+              <p class="fs-5 fw-bold">Create A Great Atmosphere</p>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-center text-center">
+              <fa-icon [icon]="faChartBar" [size]="'4x'" class="text-secondary-s mb-2"></fa-icon>
+              <p class="fs-5 fw-bold">Evaluation & Reporting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details-2 position-relative my-6 overflow-hidden">
+    <img src="assets/images/office/decoration-star.svg"
+         alt=""
+         class="decoration-star position-absolute"/>
+    <div class="container position-relative z-3">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="text-container text-center text-lg-start mb-4">
+            <h2>
+              Transform Your Workspace For Enhanced
+              <span class="text-primary-s">Productivity</span>
+            </h2>
+            <p>
+              A thoughtfully designed and well-organized office space has a
+              profound impact on productivity and employee satisfaction. It
+              sets the stage for seamless collaboration, efficient workflows,
+              and creative inspiration. At our company, we specialize in
+              creating tailored office environments that maximize productivity
+              and elevate the overall work experience.
+            </p>
+            <a routerLink="article" class="btn btn-primary">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="image-container d-flex justify-content-center">
+            <img src="assets/images/office/details-2.png" alt="" class="img-fluid"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="get-quote bg-light py-6 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h4 class="lh-base">
+            Our team of highly skilled designers and interior construction
+            workers can deliver above your level of expections
+          </h4>
+          <a [routerLink]="[]" fragment="contact" class="btn btn-secondary btn-lg">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects py-6">
+    <div class="container">
+      <h2 class="text-center pb-4">
+        Some Of Our <span class="text-secondary-s">Projects</span>
+      </h2>
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card border-0">
+            <img src="assets/images/office/project-1.jpg" alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Office space for banking</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolore, impedit.
+                <a routerLink="article">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0">
+            <img src="assets/images/office/project-2.jpg" alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Planning and design for startup</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolore, impedit.
+                <a routerLink="article">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0">
+            <img src="assets/images/office/project-3.jpg" alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Colors & materials update</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolore, impedit.
+                <a routerLink="article">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card border-0">
+            <img src="assets/images/office/project-4.jpg" alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Analysis and floor design</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolore, impedit.
+                <a routerLink="article">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0">
+            <img src="assets/images/office/project-5.jpg" alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Office space decoration</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolore, impedit.
+                <a routerLink="article">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0">
+            <img src="assets/images/office/project-6.jpg" alt=""/>
+            <div class="card-body">
+              <h5 class="card-title">Playground for kindergarten</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolore, impedit.
+                <a routerLink="article">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials bg-light py-6">
+    <div class="carousel-outer position-relative">
+      <ngb-carousel #myCarousel
+                    [showNavigationArrows]="false"
+                    [showNavigationIndicators]="false"
+                    [interval]="0">
+        <ng-template ngbSlide>
+          <div class="">
+            <div class="d-flex flex-column justify-content-center align-items-center text-center">
+              <img src="assets/images/office/testimonial-1.jpg"
+                   alt=""
+                   class="rounded-circle"
+                   width="120"/>
+              <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                “Expense bed any sister depend changer off piqued one. Contented
+                continued any happiness instantly objection yet her allowance.
+                Use correct day new brought tedious. By come this been in. Kept
+                easy or sons my it how about some words here done”
+              </p>
+              <div class="fw-bold fs-5 mt-4">Marlene Visconte</div>
+              <div>General Manager - Scouter</div>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="">
+            <div class="d-flex flex-column justify-content-center align-items-center text-center">
+              <img src="assets/images/office/testimonial-2.jpg"
+                   alt=""
+                   class="rounded-circle"
+                   width="120"/>
+              <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                “Expense bed any sister depend changer off piqued one. Contented
+                continued any happiness instantly objection yet her allowance.
+                Use correct day new brought tedious. By come this been in. Kept
+                easy or sons my it how about some words here done”
+              </p>
+              <div class="fw-bold fs-5 mt-4">John Spiker</div>
+              <div>Team Leader - Vanquish</div>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div class="">
+            <div class="d-flex flex-column justify-content-center align-items-center text-center">
+              <img src="assets/images/office/testimonial-3.jpg"
+                   alt=""
+                   class="rounded-circle"
+                   width="120"/>
+              <p class="w-50 my-4 fst-italic fs-4 mb-4">
+                “Expense bed any sister depend changer off piqued one. Contented
+                continued any happiness instantly objection yet her allowance.
+                Use correct day new brought tedious. By come this been in. Kept
+                easy or sons my it how about some words here done”
+              </p>
+              <div class="fw-bold fs-5 mt-4">Stella Virtuoso</div>
+              <div>Design Chief - Bikegirl</div>
+            </div>
+          </div>
+        </ng-template>
+
+      </ngb-carousel>
+      <button class="carousel-btn position-absolute top-50 start-0 border-0 bg-transparent"
+              (click)="myCarousel.prev()">
+        <fa-icon [icon]="faArrowCircleLeft" [size]="'3x'" class=""></fa-icon>
+      </button>
+      <button class="carousel-btn position-absolute top-50 end-0 border-0 bg-transparent"
+              (click)="myCarousel.next()">
+        <fa-icon [icon]="faArrowCircleRight" [size]="'3x'" class=""></fa-icon>
+      </button>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact my-6 position-relative">
+    <img src="assets/images/office/decoration-star.svg"
+         alt=""
+         class="decoration-star position-absolute"/>
+
+    <div class="container position-relative z-3">
+      <div class="row">
+        <div class="col-lg-6 d-none d-md-block">
+          <div class="image-container">
+            <img src="assets/images/office/contact.png" alt="" class="img-fluid"/>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="text-container">
+            <h2>Contact Us For A Quote</h2>
+
+            <form>
+              <div class="mb-3">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Enter name"/>
+              </div>
+              <div class="mb-3">
+                <input type="email"
+                       class="form-control"
+                       placeholder="Enter email"/>
+              </div>
+              <div class="mb-3">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Enter phone"/>
+              </div>
+              <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    placeholder="Enter message"
+                    rows="8"
+                  ></textarea>
+              </div>
+              <div class="d-grid gap-2">
+                <input type="submit"
+                       value="Send"
+                       class="btn btn-primary btn-block"/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-light py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 my-3">
+          <h6>About Yavin</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Molestiae, possimus! Similique asperiores aliquid accusantium
+            laudantium.
+          </p>
+        </div>
+        <div class="col-md-4 my-3">
+          <h6>Links</h6>
+          <ul class="list-unstyled">
+            <li>
+              Important: <a [routerLink]="[]">Terms & Conditions</a>,
+              <a [routerLink]="[]">Privacy Policy</a>
+            </li>
+            <li>
+              Useful: <a [routerLink]="[]">Icon Library</a>,
+              <a [routerLink]="[]">Illustrations</a>
+            </li>
+            <li>
+              Menu: <a [routerLink]="[]">Home</a>, <a [routerLink]="[]" fragment="details">Details</a>,
+              <a [routerLink]="[]" fragment="services">Services</a>, <a [routerLink]="[]" fragment="contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 my-3">
+          <div class="mb-4">
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faFacebook" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faTwitter" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faInstagram" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faPinterest" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+          </div>
+          <p>
+            We would love to hear from you
+            <a [href]="'mailto:contact@site.com'"><strong>contact&#64;site.com</strong></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top-btn" [class.show]="toTopButtonVisible()" (click)="scrollToTop()">
+    <img src="assets/images/office/up-arrow.png" alt=""/>
+  </button>
 </div>

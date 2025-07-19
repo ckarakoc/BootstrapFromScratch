@@ -10,6 +10,7 @@ import { Corso } from './corso/corso';
 import { Portfolio } from './portfolio/portfolio';
 import { Office } from './office/office';
 import { Vera } from './vera/vera';
+import { Article } from './article/article';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'corso', component: Corso },
   { path: 'portfolio', component: Portfolio },
   { path: 'office', component: Office },
+  { path: 'office/article', component: Article },
   { path: 'vera', component: Vera },
   { path: '**', component: PageNotFound },
 ];

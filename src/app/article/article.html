@@ -1,0 +1,225 @@
+<div class="office-theme" (window:scroll)="onWindowScroll($event)">
+
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light"
+       [class.bg-light]="scrolled() || !isCollapsed()"
+       [class.navbar-sticky]="scrolled()">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="[]">
+        <img src="assets/images/office/logo.svg" alt="" width="124"/>
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              (click)="isCollapsed.set(!isCollapsed())">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed()" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" [routerLink]="[]">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[]" fragment="details">
+              Details
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[]" fragment="services">
+              Services
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[]" fragment="projects">
+              Projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-secondary px-4 mx-4"
+               [routerLink]="[]" fragment="contact">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-light py-6">
+    <div class="container">
+      <h1>Article Details</h1>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <img src="assets/images/office/article-details-large.jpg" alt="" class="w-100 my-6">
+    </div>
+  </section>
+
+  <section class="pt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
+            eligendi, labore pariatur repudiandae consectetur totam eum
+            voluptatem blanditiis nulla architecto fugiat tempore obcaecati
+            molestias porro! Nisi ullam inventore eveniet quas.
+          </p>
+
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+            architecto assumenda cum nemo omnis velit nobis, nihil veniam esse
+            ratione.
+          </p>
+
+          <h2 class="mb-3">Advantages of working with this company</h2>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat
+            eligendi, labore pariatur repudiandae consectetur totam eum
+            voluptatem blanditiis nulla architecto fugiat tempore obcaecati
+            molestias porro! Nisi ullam inventore eveniet quas.
+          </p>
+
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+            architecto assumenda cum nemo omnis velit nobis, nihil veniam esse
+            ratione.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="my-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>
+                <fa-icon [icon]="faCheck" class="text-secondary-s"></fa-icon>
+                High Quality
+                Service
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                culpa provident, aliquam officia expedita recusandae!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card my-3">
+            <div class="card-body">
+              <h5>
+                <fa-icon [icon]="faCheck" class="text-secondary-s"></fa-icon>
+                Prompt Timely
+                Service
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                culpa provident, aliquam officia expedita recusandae!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5>
+                <fa-icon [icon]="faCheck" class="text-secondary-s"></fa-icon>
+                Skilled Team
+                Involved
+              </h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                culpa provident, aliquam officia expedita recusandae!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gray Box -->
+  <section class="my-5">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="card bg-light rounded-0 border-0 fs-6">
+          <div class="card-body p-4">
+            <h3>We Know What Our Customers Want</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatum at optio quod tempora cupiditate fugit dolores quam,
+              fuga ipsam aliquid rerum provident. Possimus, velit voluptatum?
+              Magnam hic ab doloremque ipsam?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bg-light py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 my-3">
+          <h6>About Yavin</h6>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Molestiae, possimus! Similique asperiores aliquid accusantium
+            laudantium.
+          </p>
+        </div>
+        <div class="col-md-4 my-3">
+          <h6>Links</h6>
+          <ul class="list-unstyled">
+            <li>
+              Important: <a [routerLink]="[]">Terms & Conditions</a>,
+              <a [routerLink]="[]">Privacy Policy</a>
+            </li>
+            <li>
+              Useful: <a [routerLink]="[]">Icon Library</a>,
+              <a [routerLink]="[]">Illustrations</a>
+            </li>
+            <li>
+              Menu: <a [routerLink]="[]">Home</a>, <a [routerLink]="[]" fragment="details">Details</a>,
+              <a [routerLink]="[]" fragment="services">Services</a>, <a [routerLink]="[]" fragment="contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 my-3">
+          <div class="mb-4">
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faFacebook" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faTwitter" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faInstagram" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+            <a [routerLink]="[]" class="text-decoration-none">
+              <fa-icon [icon]="faPinterest" [size]="'3x'" class="text-dark mx-2"></fa-icon>
+            </a>
+          </div>
+          <p>
+            We would love to hear from you
+            <a [href]="'mailto:contact@site.com'"><strong>contact&#64;site.com</strong></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top-btn" [class.show]="toTopButtonVisible()" (click)="scrollToTop()">
+    <img src="assets/images/office/up-arrow.png" alt=""/>
+  </button>
+</div>
