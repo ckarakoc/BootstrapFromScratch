@@ -1,13 +1,149 @@
-<p>home works!</p>
+<div class="home-theme">
+  <div class="title-card">
+    <span class="base-text">{{ this.currentFrameTitle }}<span aria-hidden="true">_</span></span>
+    <span class="glitch-text" aria-hidden="true">{{ this.currentFrameTitle }}<span aria-hidden="true">_</span></span>
+  </div>
 
-<a class="btn btn-primary m-1" routerLink="/home">Home</a>
-<a class="btn btn-secondary m-1" routerLink="/pricing-cards">Pricing Cards</a>
-<a class="btn btn-success m-1" routerLink="/ratings">Ratings</a>
-<a class="btn btn-info m-1" routerLink="/user-list">User List</a>
-<a class="btn btn-warning m-1" routerLink="/ebook">Ebook</a>
-<a class="btn btn-dark m-1" routerLink="/ebook/contact">Ebook Contact</a>
-<a class="btn btn-light m-1" routerLink="/corso">Corso</a>
-<a class="btn btn-info m-1" routerLink="/portfolio">Portfolio</a>
-<a class="btn btn-secondary m-1" routerLink="/office">Office</a>
-<a class="btn btn-primary m-1" routerLink="/vera">Vera</a>
-<a class="btn btn-danger m-1" routerLink="/non-existing-route">Page Not Found</a>
+  <div class="d-flex gap-1 justify-content-center flex-wrap pb-4">
+    <div class="btn-container">
+      <div class="btn-wrapper">
+        <a class="btn-link " (click)="changeIFrame('/home')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Home
+          <span class="btn__glitch" aria-hidden="true">_Home</span>
+          <label class="number">r2</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" (click)="changeIFrame('/pricing-cards')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Pricing Cards
+          <span class="btn__glitch" aria-hidden="true">_Pricing Cards</span>
+          <label class="number">r3</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link " (click)="changeIFrame('/ratings')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Ratings
+          <span class="btn__glitch" aria-hidden="true">_Ratings</span>
+          <label class="number">r4</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" (click)="changeIFrame('/user-list')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>User List
+          <span class="btn__glitch" aria-hidden="true">_User List</span>
+          <label class="number">r5</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link " (click)="changeIFrame('/ebook')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Ebook
+          <span class="btn__glitch" aria-hidden="true">_Ebook</span>
+          <label class="number">r6</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" (click)="changeIFrame('/ebook/contact')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Ebook Contact
+          <span class="btn__glitch" aria-hidden="true">_Ebook Contact</span>
+          <label class="number">r7</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link " (click)="changeIFrame('/corso')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Corso
+          <span class="btn__glitch" aria-hidden="true">_Corso</span>
+          <label class="number">r8</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" (click)="changeIFrame('/portfolio')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Portfolio
+          <span class="btn__glitch" aria-hidden="true">_Portfolio</span>
+          <label class="number">r9</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link " (click)="changeIFrame('/office')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Office
+          <span class="btn__glitch" aria-hidden="true">_Office</span>
+          <label class="number">r10</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" (click)="changeIFrame('/office/article')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Office Article
+          <span class="btn__glitch" aria-hidden="true">_Office Article</span>
+          <label class="number">r11</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link " (click)="changeIFrame('/vera')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Vera
+          <span class="btn__glitch" aria-hidden="true">_Vera</span>
+          <label class="number">r12</label>
+        </div>
+      </div>
+
+      <div class="btn-wrapper">
+        <a class="btn-link style-secondary" (click)="changeIFrame('/non-existing-route')"></a>
+        <div class="custom-btn">
+          <span aria-hidden="true">_</span>Page Not Found
+          <span class="btn__glitch" aria-hidden="true">_Page Not Found</span>
+          <label class="number">r13</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .funky-separator {
+    height: 6px;
+    background: linear-gradient(90deg, #ff184c, #00e572, #6441a5, #fded00);
+    background-size: 400% 100%;
+    animation: glitchyMove 4s linear infinite;
+    position: relative;
+    margin: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 10% 100%, 0 70%);
+    box-shadow: 0 0 8px #ff184c, 0 0 20px #00e572;
+  }
+
+  @keyframes glitchyMove {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+</style>
+
+<div class="funky-separator"></div>
+<div class="d-block w-100 h-100">
+  <iframe #frame src="/#/corso" style="width: 100vw; height: 100vh; border: none;"></iframe>
+</div>
+

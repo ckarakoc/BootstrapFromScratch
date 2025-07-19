@@ -9,10 +9,11 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes,
+      withHashLocation(),
       withInMemoryScrolling({ anchorScrolling: "enabled" }),
       withRouterConfig({
         paramsInheritanceStrategy: 'always',
-        urlUpdateStrategy: 'eager'
+        urlUpdateStrategy: 'eager',
       })),
     provideHttpClient(),
   ]
