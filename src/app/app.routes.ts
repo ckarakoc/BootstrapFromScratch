@@ -11,6 +11,7 @@ import { Portfolio } from './portfolio/portfolio';
 import { Office } from './office/office';
 import { Vera } from './vera/vera';
 import { Article } from './article/article';
+import { Privacy } from './privacy/privacy';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -25,5 +26,6 @@ export const routes: Routes = [
   { path: 'office', component: Office },
   { path: 'office/article', component: Article },
   { path: 'vera', component: Vera },
+  { path: 'vera/privacy', component: Privacy },
   { path: '**', component: PageNotFound },
 ];
