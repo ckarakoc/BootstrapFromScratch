@@ -1,8 +1,10 @@
 <div class="home-theme">
-  <div class="title-card">
-    <span class="base-text">{{ this.currentFrameTitle }}<span aria-hidden="true">_</span></span>
-    <span class="glitch-text" aria-hidden="true">{{ this.currentFrameTitle }}<span aria-hidden="true">_</span></span>
-  </div>
+  <a [routerLink]="fullRoute">
+    <div class="title-card">
+      <span class="base-text">{{ this.currentFrameTitle }}<span aria-hidden="true">_</span></span>
+      <span class="glitch-text" aria-hidden="true">{{ this.currentFrameTitle }}<span aria-hidden="true">_</span></span>
+    </div>
+  </a>
 
   <div class="d-flex gap-1 justify-content-center flex-wrap pb-4">
     <div class="btn-container">

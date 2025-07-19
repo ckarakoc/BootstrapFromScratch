@@ -15,7 +15,11 @@ export class Home {
   currentFrameTitle = 'Corso';
 
   changeIFrame(s: string) {
-    this.iframe.nativeElement.src = "/#" + s;
+    this.iframe.nativeElement.src = `#${s}`;
     this.currentFrameTitle = s.slice(1);
+  }
+
+  get fullRoute(): string[] {
+    return ['/', ...this.currentFrameTitle.split('/').map(s => s.toLowerCase())];
   }
 }
